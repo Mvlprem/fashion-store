@@ -1,7 +1,11 @@
+import Footer from './components/Footer'
+import { Outlet } from 'react-router-dom'
+
 function App() {
   return (
     <>
-      <p className="lead">Fashion Forward</p>
+      <Outlet />
+      <Footer />
     </>
   )
 }
