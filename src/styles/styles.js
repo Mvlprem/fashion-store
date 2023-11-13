@@ -15,4 +15,12 @@ export const GlobalStyle = styled.createGlobalStyle`
   small {
     font-family: sans-serif;
   }
+
+  header {
+    background-color: white;
+  }
+
+  footer {
+    background-color: black;
+  }
 `
