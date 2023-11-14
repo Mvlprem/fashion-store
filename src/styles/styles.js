@@ -11,6 +11,12 @@ export const GlobalStyle = styled.createGlobalStyle`
     --bs-body-font-family: 'Druk', sans-serif;
   }
 
+  #root {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+  }
+
   p,
   small {
     font-family: sans-serif;
