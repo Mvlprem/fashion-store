@@ -22,6 +22,10 @@ export const GlobalStyle = styled.createGlobalStyle`
     font-family: sans-serif;
   }
 
+  body {
+    background-color: #f3f3f3;
+  }
+
   header {
     background-color: white;
   }
