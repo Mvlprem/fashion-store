@@ -106,12 +106,7 @@ function Header() {
                 </Link>
               </div>
               <div className="mt-3">
-                <Link
-                  to="products"
-                  className="h2"
-                  state={'collections'}
-                  onClick={closeCanvas}
-                >
+                <Link className="h2" to="collections" onClick={closeCanvas}>
                   Collections
                 </Link>
               </div>
