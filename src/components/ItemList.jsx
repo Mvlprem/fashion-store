@@ -6,11 +6,7 @@ function ItemList(props) {
 
   const render = products.map((item) => {
     return (
-      <div
-        className="col-12 col-md-6 col-lg-4"
-        id={item.node.id}
-        key={item.node.id}
-      >
+      <div className="col-12 col-md-6 col-lg-4" key={item.node.id}>
         <div className="container">
           <Link
             to="/product"
@@ -35,7 +31,7 @@ function ItemList(props) {
 
   return (
     <>
-      <div className="row">{render}</div>
+      <div className="row mb-3">{render}</div>
     </>
   )
 }
