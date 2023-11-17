@@ -1,15 +1,23 @@
+import { ShopContext } from '../App'
 import { Badge } from '@mui/material'
 import { Link } from 'react-router-dom'
 import brandLogo from '../assets/logo.svg'
+import { useContext, useMemo } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+
 
 function Header() {
   function closeCanvas() {
     const closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]')
     closeCanvas.click()
   }
+
+  const { cart } = useContext(ShopContext)
+  const productCount = useMemo(() => {
+    return cart.reduce((total, product) => (total += product.quantity), 0)
+  }, [cart])
 
   return (
     <header className="container-fluid sticky-top shadow">
@@ -33,7 +41,7 @@ function Header() {
         {/* Shopping Cart */}
         <Link to="cart" className="btn">
           <Badge
-            badgeContent={0}
+            badgeContent={productCount}
             sx={{
               '& .MuiBadge-badge': {
                 color: 'white',
