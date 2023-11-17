@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import { useContext } from 'react'
+import { ShopContext } from '../App'
 import { Link } from 'react-router-dom'
+import { ACTIONS } from '../app/reducer'
 import { useLocation } from 'react-router-dom'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
@@ -7,6 +10,7 @@ import RemoveIcon from '@mui/icons-material/Remove'
 function Product() {
   const { state } = useLocation()
   const [quantity, setQuantity] = useState(1)
+  const { dispatch } = useContext(ShopContext)
 
   function updateQuantity(action) {
     if (action === 'sub' && quantity > 1) setQuantity(quantity - 1)
@@ -89,7 +93,16 @@ function Product() {
               </div>
 
               <div className="d-grid">
-                <button className="btn btn-dark">
+                <button
+                  className="btn btn-dark"
+                  onClick={() =>
+                    dispatch({
+                      type: ACTIONS.ADD,
+                      product: state,
+                      quantity: quantity,
+                    })
+                  }
+                >
                   <p className="m-0">Add to cart</p>
                 </button>
               </div>

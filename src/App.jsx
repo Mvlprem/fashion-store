@@ -1,12 +1,14 @@
+import reducer from './app/reducer'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { Outlet } from 'react-router-dom'
 import fetchCollection from './api/fetchCollection'
-import { useEffect, useState, createContext } from 'react'
+import { useEffect, useState, createContext, useReducer } from 'react'
 
 export const ShopContext = createContext(null)
 
 function App() {
+  const [cart, dispatch] = useReducer(reducer, [])
   const [collections, setCollections] = useState([])
 
   useEffect(() => {
@@ -20,7 +22,7 @@ function App() {
   }, [])
 
   return (
-    <ShopContext.Provider value={{ collections }}>
+    <ShopContext.Provider value={{ collections, cart, dispatch }}>
       <Header />
       <Outlet />
       <Footer />
