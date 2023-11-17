@@ -4,7 +4,7 @@ export const ACTIONS = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.ADD_TO_CART: {
+    case ACTIONS.ADD: {
       return addToCart(state, action.product, action.quantity)
     }
     default: {
