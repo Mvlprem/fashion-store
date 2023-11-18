@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useContext } from 'react'
 import { ShopContext } from '../App'
+import Alert from '@mui/material/Alert'
 import { Link } from 'react-router-dom'
 import { ACTIONS } from '../app/reducer'
+import Snackbar from '@mui/material/Snackbar'
 import { useLocation } from 'react-router-dom'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
@@ -16,6 +18,16 @@ function Product() {
     if (action === 'sub' && quantity > 1) setQuantity(quantity - 1)
     else if (action === 'add') setQuantity(quantity + 1)
     else setQuantity(1)
+  }
+
+  /* snackbar handler */
+  const [open, setOpen] = useState(false)
+  const handleClick = () => {
+    setOpen(true)
+  }
+  const handleClose = (reason) => {
+    if (reason === 'clickaway') return
+    setOpen(false)
   }
 
   return (
@@ -92,19 +104,33 @@ function Product() {
                 </button>
               </div>
 
+              {/* button Add to cart */}
               <div className="d-grid">
                 <button
-                  className="btn btn-dark"
-                  onClick={() =>
+                  onClick={() => {
                     dispatch({
                       type: ACTIONS.ADD,
                       product: state,
                       quantity: quantity,
                     })
-                  }
+                    handleClick()
+                  }}
+                  className="btn btn-dark btn-lg"
                 >
                   <p className="m-0">Add to cart</p>
                 </button>
+
+                {/* snackbar setup */}
+                <Snackbar
+                  open={open}
+                  onClose={handleClose}
+                  autoHideDuration={4000}
+                  anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                >
+                  <Alert severity="success">
+                    Item added to your cart <Link to="/cart" className='ms-2'>View cart</Link>
+                  </Alert>
+                </Snackbar>
               </div>
 
               {/* product description */}
