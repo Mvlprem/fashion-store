@@ -14,6 +14,7 @@ function ItemList(props) {
             className="link-dark text-decoration-none"
           >
             <img
+              loading='lazy'
               alt={item.node.title}
               src={item.node.image.url}
               className="img-fluid rounded mb-3"

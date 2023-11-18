@@ -18,6 +18,7 @@ function Collections() {
             className="link-dark text-decoration-none"
           >
             <img
+              loading="lazy"
               alt={item.title}
               src={item.image.url}
               className="img-fluid rounded mb-3"

@@ -39,6 +39,7 @@ function Product() {
             <div className="container">
               <Link to="/preview" state={state.image}>
                 <img
+                  loading="lazy"
                   src={state.image.url}
                   alt={state.title}
                   className="img-fluid"
@@ -128,7 +129,10 @@ function Product() {
                   anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
                 >
                   <Alert severity="success">
-                    Item added to your cart <Link to="/cart" className='ms-2'>View cart</Link>
+                    Item added to your cart
+                    <Link to="/cart" className="ms-2">
+                      View cart
+                    </Link>
                   </Alert>
                 </Snackbar>
               </div>
