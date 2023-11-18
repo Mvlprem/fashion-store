@@ -112,10 +112,16 @@ function Cart() {
               <p className="d-inline lead">${parseInt(subtotal).toFixed(2)}</p>
             </h4>
             <small>Taxes and shipping calculated at checkout</small>
-            <div className="d-grid mt-2 ms-auto col-12 col-md-4">
-              <button className="btn btn-dark btn-lg">
-                <p className="m-0">Check out</p>
-              </button>
+            <div className="mt-2 ms-auto col-12 col-md-4">
+              <Link
+                to="/"
+                onClick={window.location.reload}
+                className="d-grid text-decoration-none"
+              >
+                <button className="btn btn-dark btn-lg">
+                  <p className="m-0">Check out</p>
+                </button>
+              </Link>
             </div>
           </div>
         </main>
