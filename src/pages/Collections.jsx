@@ -5,6 +5,7 @@ import LoadingScreen from '../components/LoadingScreen'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
 
 function Collections() {
+  window.scrollTo(0, 0)
   const { collections } = useContext(ShopContext)
   collections.sort((a, b) => (a.handle < b.handle ? -1 : 1))
 

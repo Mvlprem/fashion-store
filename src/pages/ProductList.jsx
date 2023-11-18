@@ -5,6 +5,7 @@ import ItemList from '../components/ItemList'
 import LoadingScreen from '../components/LoadingScreen'
 
 function ProductList() {
+  window.scrollTo(0, 0)
   const { state } = useLocation()
   const { collections } = useContext(ShopContext)
   const collectionType = collections.filter((item) => {

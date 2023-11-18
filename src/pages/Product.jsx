@@ -10,6 +10,7 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 
 function Product() {
+  window.scrollTo(0, 0)
   const { state } = useLocation()
   const [quantity, setQuantity] = useState(1)
   const { dispatch } = useContext(ShopContext)

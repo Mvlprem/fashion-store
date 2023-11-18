@@ -10,6 +10,7 @@ import basketballSm from '../assets/basketballSm.webp'
 import LoadingScreen from '../components/LoadingScreen'
 
 function Home() {
+  window.scrollTo(0, 0)
   const { collections } = useContext(ShopContext)
 
   const collectionType = collections.filter((item) => {
