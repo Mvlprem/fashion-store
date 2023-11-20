@@ -34,11 +34,11 @@ const router = createBrowserRouter([
         path: 'collections',
         element: <Collections />,
       },
+      {
+        path: 'preview',
+        element: <ImageViewer />,
+      },
     ],
-  },
-  {
-    path: 'preview',
-    element: <ImageViewer />,
   },
 ])
 
