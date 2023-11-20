@@ -1,6 +1,6 @@
 ## Fashion Store
 
-A simple Fashion store React app.
+A simple React e-commerce website with a functional cart.
 
 Live preview : [Fashion store](https://prem-fashion-store.netlify.app/)
 
@@ -20,3 +20,4 @@ npm run dev
 - [React Router](https://reactrouter.com/en/main)
 - [Material UI](https://mui.com/material-ui/)
 - [Styled Components](https://styled-components.com/)
+- [react-zoom-pan-pinch](https://www.npmjs.com/package/react-zoom-pan-pinch)
