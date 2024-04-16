@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { ShopContext } from '../App'
 import Alert from '@mui/material/Alert'
@@ -10,7 +10,10 @@ import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 
 function Product() {
-  window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const { state } = useLocation()
   const [quantity, setQuantity] = useState(1)
   const { dispatch } = useContext(ShopContext)

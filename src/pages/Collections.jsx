@@ -1,11 +1,14 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ShopContext } from '../App'
 import { Link } from 'react-router-dom'
 import LoadingScreen from '../components/LoadingScreen'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
 
 function Collections() {
-  window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const { collections } = useContext(ShopContext)
   collections.sort((a, b) => (a.handle < b.handle ? -1 : 1))
 

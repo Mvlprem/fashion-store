@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ShopContext } from '../App'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,10 @@ import basketballSm from '../assets/basketballSm.webp'
 import LoadingScreen from '../components/LoadingScreen'
 
 function Home() {
-  window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const { collections } = useContext(ShopContext)
 
   const collectionType = collections.filter((item) => {
@@ -21,22 +24,22 @@ function Home() {
   return (
     <main>
       {/* Banner One */}
-      <SectionOne id="banner-one">
-        <DivSO className="container py-5 w-50 position-absolute bottom-0 text-white">
+      <SectionOne id='banner-one'>
+        <DivSO className='container py-5 w-50 position-absolute bottom-0 text-white'>
           <h1>
             The Peak <br /> Collection
           </h1>
           <p>Push your performance with our premium athletic wear</p>
-          <Link to="collections" className="btn btn-outline-light">
-            <small className="lead">Shop now</small>
+          <Link to='collections' className='btn btn-outline-light'>
+            <small className='lead'>Shop now</small>
           </Link>
         </DivSO>
       </SectionOne>
 
       {/* New Arrivals */}
-      <section className="my-5 mx-3 mx-lg-5">
-        <p className="text-center mb-2">New arrivals</p>
-        <h1 className="mb-4 text-center">{"Spring '23"}</h1>
+      <section className='my-5 mx-3 mx-lg-5'>
+        <p className='text-center mb-2'>New arrivals</p>
+        <h1 className='mb-4 text-center'>{"Spring '23"}</h1>
 
         {collections.length === 0 ? (
           <LoadingScreen />
@@ -46,12 +49,12 @@ function Home() {
       </section>
 
       {/* Banner Two */}
-      <SectionTwo id="banner-two">
-        <DivST className="container py-5 w-50 position-absolute bottom-0 text-dark">
+      <SectionTwo id='banner-two'>
+        <DivST className='container py-5 w-50 position-absolute bottom-0 text-dark'>
           <h1>Midweight classics</h1>
           <p>Clothes that work as hard as you do.</p>
-          <Link to="collections" className="btn btn-outline-dark">
-            <small className="lead">Shop now</small>
+          <Link to='collections' className='btn btn-outline-dark'>
+            <small className='lead'>Shop now</small>
           </Link>
         </DivST>
       </SectionTwo>
