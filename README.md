@@ -2,16 +2,29 @@
 
 This project focuses on to create an e-commerce website which allows to browse through products and place orders with a functional cart.
 
-### Demo : [Fashion store](https://prem-fashion-store.netlify.app/)
+#### Demo : [Fashion store](https://prem-fashion-store.netlify.app/)
 
 ## Getting started
 
-```
-git clone https://github.com/Mvlprem/fashion-store.git
-cd fashion-store
-npm install
-npm run dev
-```
+To get this project up and running locally on your computer:
+
+1. Clone this repository
+
+   ```bash
+   git clone https://github.com/Mvlprem/fashion-store.git
+   ```
+
+2. Install the required packages in the root of your clone of this repo
+
+   ```bash
+   npm install
+   ```
+
+3. Run the server, using the below command
+
+   ```bash
+   npm run dev
+   ```
 
 ## Built with
 
