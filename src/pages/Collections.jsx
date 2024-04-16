@@ -11,23 +11,23 @@ function Collections() {
 
   const render = collections.map((item) => {
     return (
-      <div className="col-12 col-md-6 col-lg-4" key={item.id}>
-        <div className="container">
+      <div className='col-12 col-md-6 col-lg-4' key={item.id}>
+        <div className='container'>
           <Link
-            to="/products"
+            to={`/collections/${item.handle}`}
             state={item.handle}
-            className="link-dark text-decoration-none"
+            className='link-dark text-decoration-none'
           >
             <img
-              loading="lazy"
+              loading='lazy'
               alt={item.title}
               src={item.image.url}
-              className="img-fluid rounded mb-3"
+              className='img-fluid rounded mb-3'
             />
 
-            <p className="mb-5 lead fw-bold">
+            <p className='mb-5 lead fw-bold'>
               {item.title}
-              <small className="ms-2">
+              <small className='ms-2'>
                 <ArrowOutwardIcon />
               </small>
             </p>
@@ -38,13 +38,13 @@ function Collections() {
   })
 
   return (
-    <main className="my-2 mx-lg-5">
-      <div className="container-fluid">
-        <h1 className="my-4 ps-3">Collections</h1>
+    <main className='my-2 mx-lg-5'>
+      <div className='container-fluid'>
+        <h1 className='my-4 ps-3'>Collections</h1>
         {collections.length === 0 ? (
           <LoadingScreen />
         ) : (
-          <div className="row mb-3">{render}</div>
+          <div className='row mb-3'>{render}</div>
         )}
       </div>
     </main>

@@ -7,7 +7,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 
-
 function Header() {
   function closeCanvas() {
     const closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]')
@@ -20,26 +19,26 @@ function Header() {
   }, [cart])
 
   return (
-    <header className="container-fluid sticky-top shadow">
-      <nav className="navbar">
+    <header className='container-fluid sticky-top shadow'>
+      <nav className='navbar'>
         {/* Offcanvas Toggle */}
         <button
-          className="btn"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas-nav"
+          className='btn'
+          data-bs-toggle='offcanvas'
+          data-bs-target='#offcanvas-nav'
         >
           <MenuIcon />
         </button>
 
         {/* Brand Logo*/}
-        <div className="d-block mx-auto">
-          <Link to="/" className="navbar-brand">
-            <img src={brandLogo} alt="Brand Logo" style={{ width: '150px' }} />
+        <div className='d-block mx-auto'>
+          <Link to='/' className='navbar-brand'>
+            <img src={brandLogo} alt='Brand Logo' style={{ width: '150px' }} />
           </Link>
         </div>
 
         {/* Shopping Cart */}
-        <Link to="cart" className="btn">
+        <Link to='cart' className='btn'>
           <Badge
             badgeContent={productCount}
             sx={{
@@ -59,62 +58,62 @@ function Header() {
       </nav>
 
       {/* Offcanvas Sidebar */}
-      <div className="offcanvas offcanvas-start" id="offcanvas-nav">
-        <div className="mt-4">
+      <div className='offcanvas offcanvas-start' id='offcanvas-nav'>
+        <div className='mt-4'>
           {/* Offcanvas Header */}
-          <div className="offcanvas-header">
-            <div className="container">
-              <button className="btn p-0" data-bs-dismiss="offcanvas">
+          <div className='offcanvas-header'>
+            <div className='container'>
+              <button className='btn p-0' data-bs-dismiss='offcanvas'>
                 <CloseIcon />
               </button>
             </div>
           </div>
 
           {/* Offcanvas Body */}
-          <div className="offcanvas-body">
-            <div className="container">
-              <div className="mt-3">
+          <div className='offcanvas-body'>
+            <div className='container'>
+              <div className='mt-3'>
                 <Link
-                  to="products"
+                  to='/collections/men'
                   state={'men'}
-                  className="h2"
+                  className='h2'
                   onClick={closeCanvas}
                 >
                   Men
                 </Link>
               </div>
-              <div className="mt-3">
+              <div className='mt-3'>
                 <Link
-                  to="products"
-                  className="h2"
+                  to='/collections/women'
+                  className='h2'
                   state={'women'}
                   onClick={closeCanvas}
                 >
                   Women
                 </Link>
               </div>
-              <div className="mt-3">
+              <div className='mt-3'>
                 <Link
-                  to="products"
-                  className="h2"
+                  to='/collections/unisex'
+                  className='h2'
                   state={'unisex'}
                   onClick={closeCanvas}
                 >
                   Unisex
                 </Link>
               </div>
-              <div className="mt-3">
+              <div className='mt-3'>
                 <Link
-                  to="products"
-                  className="h2"
+                  to='/collections/featured'
+                  className='h2'
                   state={'featured'}
                   onClick={closeCanvas}
                 >
                   Featured
                 </Link>
               </div>
-              <div className="mt-3">
-                <Link className="h2" to="collections" onClick={closeCanvas}>
+              <div className='mt-3'>
+                <Link className='h2' to='collections' onClick={closeCanvas}>
                   Collections
                 </Link>
               </div>

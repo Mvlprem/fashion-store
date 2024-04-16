@@ -23,19 +23,19 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: 'products',
-        element: <ProductList />,
-      },
-      {
-        path: 'product',
-        element: <Product />,
-      },
-      {
         path: 'collections',
         element: <Collections />,
       },
       {
-        path: 'preview',
+        path: 'collections/:name',
+        element: <ProductList />,
+      },
+      {
+        path: 'collections/:name/:title',
+        element: <Product />,
+      },
+      {
+        path: 'collections/:name/:title/preview',
         element: <ImageViewer />,
       },
     ],
